@@ -30,7 +30,7 @@ CompanyName = 'Krystian Maksymowicz'
 Copyright = '(c) Krystian Maksymowicz. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'A set of functions to control Palo Alto Networks Global Protect Agent (PanGPA). Currently allows to manage default certificate used and default route.'
+Description = 'A set of functions to control Palo Alto Networks Global Protect Agent (PanGPA). Currently allows to manage default certificate, default route and enable/disable lan restriction.'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
