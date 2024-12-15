@@ -6,14 +6,18 @@ function Disable-PanGPALanRestriction {
 
     $InterfaceIndexes = Get-NetAdapter | Select-Object -ExpandProperty InterfaceIndex
 
-    Get-NetRoute -InterfaceIndex $InterfaceIndexes |
+    $MaliciousRoutes = Get-NetRoute -InterfaceIndex $InterfaceIndexes |
     Group-Object -Property "DestinationPrefix" |
     Where-Object -FilterScript {
         $_.Count -eq 2 -and
         $_.Name -ne "0.0.0.0/0"
     } |
     Select-Object -ExpandProperty Group |
-    ForEach-Object -Process {
-        Set-NetRoute -InterfaceIndex $PanGPInterface.InterfaceIndex -RouteMetric 60
+    Where-Object -FilterScript { $_.ifIndex -eq $PanGPInterface.InterfaceIndex }
+
+    foreach ($Route in $MaliciousRoutes) {
+        for ($i = 0; $i -lt 5; $i++) {
+            $Route | Set-NetRoute -RouteMetric 60
+        }
     }
 }
