@@ -12,7 +12,7 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '1.0.0'
+ModuleVersion = '1.0.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -68,6 +68,8 @@ Description = 'A set of functions to control Palo Alto Networks Global Protect A
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 NestedModules = @(
     'Public\Clear-PanGPACertificate.ps1'
+    'Public\Disable-PanGPALanRestriction.ps1'
+    'Public\Enable-PanGPALanRestriction.ps1'
     'Public\Find-PanGPACertificate.ps1'
     'Public\Get-PanGPACertificateString.ps1'
     'Public\New-PanGPACertificateString.ps1'
@@ -78,6 +80,8 @@ NestedModules = @(
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
     'Clear-PanGPACertificate'
+    'Disable-PanGPALanRestriction'
+    'Enable-PanGPALanRestriction'
     'Find-PanGPACertificate'
     'Get-PanGPACertificateString'
     'New-PanGPACertificateString'
@@ -103,6 +107,8 @@ AliasesToExport = @()
 # List of all files packaged with this module
 FileList = @(
     'Public\Clear-PanGPACertificate.ps1'
+    'Public\Disable-PanGPALanRestriction.ps1'
+    'Public\Enable-PanGPALanRestriction.ps1'
     'Public\Find-PanGPACertificate.ps1'
     'Public\Get-PanGPACertificateString.ps1'
     'Public\New-PanGPACertificateString.ps1'
